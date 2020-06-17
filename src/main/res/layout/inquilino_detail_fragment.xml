@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardviewInquilinoDetail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+
+    app:cardElevation="4dp"
+    tools:context=".ui.inquilinos.InquilinoDetailFragment" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/textView4"
+
+            style="@style/labelStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DNI" />
+
+        <TextView
+            android:id="@+id/etIFDDni"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:paddingStart="20dp"
+            android:paddingBottom="15dp"
+            android:text="DNI" />
+
+        <TextView
+            android:id="@+id/textView10"
+            style="@style/labelStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Apellido" />
+
+        <TextView
+            android:id="@+id/etIFDApellido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:paddingStart="20dp"
+            android:paddingBottom="15dp"
+            android:text="Name" />
+
+        <TextView
+            android:id="@+id/textView13"
+            style="@style/labelStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre" />
+
+        <TextView
+            android:id="@+id/etIFDNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:paddingStart="20dp"
+            android:paddingBottom="15dp"
+            android:text="Name" />
+
+        <TextView
+            android:id="@+id/textView14"
+            style="@style/labelStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dirección" />
+
+        <TextView
+            android:id="@+id/etIFDDireccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:paddingStart="20dp"
+            android:paddingBottom="15dp"
+            android:text="Name" />
+
+        <TextView
+            android:id="@+id/textView15"
+            style="@style/labelStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Teléfono" />
+
+        <TextView
+            android:id="@+id/etIFDTelefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:paddingStart="20dp"
+            android:paddingBottom="15dp"
+            android:text="Name" />
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

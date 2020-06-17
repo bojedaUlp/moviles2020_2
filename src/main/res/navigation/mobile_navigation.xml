@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_perfil"
+        android:name="com.example.moviles2020_2.ui.perfil.PerfilFragment"
+        android:label="Mi Perfil"
+        tools:layout="@layout/perfil_fragment">
+        <action
+            android:id="@+id/action_nav_perfil_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.moviles2020_2.ui.home.HomeFragment"
+        android:label="Inicio"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_HomeFragment_to_HomeSecondFragment"
+            app:destination="@id/nav_home_second" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_home_second"
+        android:name="com.example.moviles2020_2.ui.home.HomeSecondFragment"
+        android:label="Inicio"
+        tools:layout="@layout/fragment_home_second">
+        <action
+            android:id="@+id/action_HomeSecondFragment_to_HomeFragment"
+            app:destination="@id/nav_home" />
+
+        <argument
+            android:name="myArg"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_contrato"
+        android:name="com.example.moviles2020_2.ui.contrato.ContratoFragment"
+        android:label="Consulta Contratos"
+        tools:layout="@layout/contrato_fragment">
+        <action
+            android:id="@+id/action_nav_contrato_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_inquilino"
+        android:name="com.example.moviles2020_2.ui.inquilinos.InquilinoFragment"
+        android:label="Consulta Inquilinos"
+        tools:layout="@layout/inquilino_fragment">
+        <action
+            android:id="@+id/action_inquilinoFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_propiedad"
+        android:name="com.example.moviles2020_2.ui.propiedades.PropiedadFragment"
+        android:label="Consulta Propiedades"
+        tools:layout="@layout/propiedad_fragment">
+        <action
+            android:id="@+id/action_propiedadFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/contratoDetailFragment"
+        android:name="com.example.moviles2020_2.ui.contrato.ContratoDetailFragment"
+        android:label="Detalle Contrato"
+        tools:layout="@layout/contrato_detail_fragment" >
+        <action
+            android:id="@+id/action_contratoDetailFragment_to_nav_contrato"
+            app:destination="@id/nav_contrato" />
+    </fragment>
+    <fragment
+        android:id="@+id/inquilinoDetailFragment"
+        android:name="com.example.moviles2020_2.ui.inquilinos.InquilinoDetailFragment"
+        android:label="Detalle Inquilino"
+        tools:layout="@layout/inquilino_detail_fragment" >
+        <action
+            android:id="@+id/action_inquilinoDetailFragment_to_nav_inquilino"
+            app:destination="@id/nav_inquilino" />
+    </fragment>
+    <fragment
+        android:id="@+id/propiedadDetailFragment"
+        android:name="com.example.moviles2020_2.ui.propiedades.PropiedadDetailFragment"
+        android:label="Detalle Propiedades"
+        tools:layout="@layout/propiedad_detail_fragment">
+        <action
+            android:id="@+id/action_propiedadDetailFragment_to_nav_propiedad"
+            app:destination="@id/nav_propiedad" />
+        <argument
+            android:name="propiedad"
+            app:argType="com.example.moviles2020_2.model.Propiedad" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.example.moviles2020_2.ui.pagos.PaymentFragment"
+        android:label="Consulta Pagos"
+        tools:layout="@layout/payment_fragment" >
+        <action
+            android:id="@+id/action_paymentFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/paymentDetailFragment"
+        android:name="com.example.moviles2020_2.ui.pagos.PaymentDetailFragment"
+        android:label="Detalle Pagos"
+        tools:layout="@layout/payment_detail_fragment" >
+        <action
+            android:id="@+id/action_paymentDetailFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/salirFragment"
+        android:name="com.example.moviles2020_2.ui.salir.salirFragment"
+        android:label="Salir"
+        tools:layout="@layout/salir_fragment" >
+        <action
+            android:id="@+id/action_salirFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+
+</navigation>
