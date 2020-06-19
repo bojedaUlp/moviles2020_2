@@ -21,6 +21,8 @@ import retrofit2.Response;
 public class ActualizarInmuebleViewModel extends AndroidViewModel {
     private Context context;
     private MutableLiveData<Inmueble> inm;
+    private MutableLiveData<String> operacion;
+    private MutableLiveData<Inmueble> bajaInm;
     public ActualizarInmuebleViewModel(@NonNull Application application) {
         super(application);
         context=application.getApplicationContext();
@@ -32,6 +34,21 @@ public class ActualizarInmuebleViewModel extends AndroidViewModel {
         }
         return inm;
     }
+
+    public LiveData<Inmueble> getBajaInm(){
+        if(bajaInm==null){
+            bajaInm=new MutableLiveData<>();
+        }
+        return bajaInm;
+    }
+
+    public LiveData<String> getOperacion(){
+        if(operacion==null){
+            operacion=new MutableLiveData<>();
+        }
+        return operacion;
+    }
+
     public String leerToken(){
 
         SharedPreferences sp= context.getSharedPreferences("token",0);
@@ -58,6 +75,33 @@ public class ActualizarInmuebleViewModel extends AndroidViewModel {
                     Log.d("salida Error",t.getMessage());
                     Log.d("salida Error",call.request().body().toString());
                     t.printStackTrace();
+            }
+        });
+    }
+
+
+    public void bajaInmueble(int id){
+        String token=leerToken();
+        Call<String> baja= ApiClient.getMyApiClient().bajaInm(token, id);
+        baja.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                if(response.isSuccessful()){
+                    Toast.makeText(context, "Se ha dado de baja el inmueble", Toast.LENGTH_LONG).show();
+                    operacion.setValue("Exitoso");
+                }
+                else{
+                    Toast.makeText(context, "ocurrio un error " + response.errorBody(), Toast.LENGTH_LONG).show();
+                    operacion.setValue("No se pudo dar de baja");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+                operacion.setValue(t.getLocalizedMessage());
+                Log.d("salida Error",t.getMessage());
+                Log.d("salida Error",call.request().body().toString());
+                t.printStackTrace();
             }
         });
     }

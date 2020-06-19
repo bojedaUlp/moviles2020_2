@@ -83,8 +83,8 @@ public class LoginViewModel extends AndroidViewModel {
             @Override
             public void onFailure(Call<String> call, Throwable t) {
                 error.postValue("Ha ocurrido el siguiente error: " + t.getMessage());
-                Log.d("salida Error",t.getMessage());
-                Log.d("salida Error",call.request().body().toString());
+               // Log.d("salida Error",t.getMessage());
+               // Log.d("salida Error",call.request().body().toString());
                 t.printStackTrace();
             }
         });

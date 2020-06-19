@@ -63,10 +63,10 @@ public class AdapterContrato extends RecyclerView.Adapter<AdapterContrato.ViewHo
 
         public void cargaPropiedad(Inmueble p){
             tvDireccion.setText(p.getDireccion());
-            tvAmbientes.setText(p.getAmbientes()+"");
+            tvAmbientes.setText(p.getCantAmbientes());
             //tvTipo.setText(p.getTipo());
             tvUso.setText(p.getUso());
-            tvPrecio.setText(p.getPrecio()+"");
+            tvPrecio.setText(p.getPrecioInm()+"");
             //tvDisponible.setText(p.getDisponible()+"");
             btnBuscaPropiedad.setText("Ver Contrato");
         }
@@ -80,7 +80,7 @@ public class AdapterContrato extends RecyclerView.Adapter<AdapterContrato.ViewHo
 
 
             Bundle bundle = new Bundle();
-            bundle.putInt("id", propiedad.getId());
+            bundle.putInt("id", propiedad.getId_Inmueble());
             Navigation.findNavController(v).navigate(R.id.contratoDetailFragment, bundle);
 
 

@@ -67,10 +67,10 @@ public class AdapterInquilino extends RecyclerView.Adapter<AdapterInquilino.View
 
         public void cargaPropiedad(Inmueble p){
             tvDireccion.setText(p.getDireccion());
-            tvAmbientes.setText(p.getAmbientes()+"");
+            tvAmbientes.setText(p.getCantAmbientes()+"");
             //tvTipo.setText(p.getTipo());
             tvUso.setText(p.getUso());
-            tvPrecio.setText(p.getPrecio()+"");
+            tvPrecio.setText(p.getPrecioInm()+"");
             //tvDisponible.setText(p.getDisponible()+"");
             btnBuscaPropiedad.setText("Ver Inquilino");
         }
@@ -84,7 +84,7 @@ public class AdapterInquilino extends RecyclerView.Adapter<AdapterInquilino.View
 
 
             Bundle bundle = new Bundle();
-            bundle.putInt("id", propiedad.getId());
+            bundle.putInt("id", propiedad.getId_Inmueble());
             Navigation.findNavController(v).navigate(R.id.inquilinoDetailFragment, bundle);
 
 
